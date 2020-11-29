@@ -1,0 +1,54 @@
+/* purgecss start ignore */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+/* purgecss end ignore */
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    font-family: 'Source Sans Pro';
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+}
+
+.input,
+.input:hover,
+.input:focus {
+  @apply py-2 px-3 border bg-gray-200 border-gray-200 rounded-md outline-none;
+}
+
+.input--on-bg-brand-blue,
+.input--on-bg-brand-blue:hover,
+.input--on-bg-brand-blue:focus {
+  @apply bg-brand-dark-blue border border-brand-dark-blue text-white !important;
+}
+
+.social-icon {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+.social-icon--google {
+  background-image: url('~@/assets/images/GoogleIcon.png');
+}
+
+.social-icon--facebook {
+  background-image: url('~@/assets/images/FacebookIcon.png');
+}

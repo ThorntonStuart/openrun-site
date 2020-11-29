@@ -18,6 +18,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/vue-formulate',
+    '~/plugins/repository',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -27,13 +29,76 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/fontawesome',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth',
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/auth/login',
+            method: 'post',
+            propertyName: 'token',
+          },
+          logout: {
+            url: '/auth/logout',
+            method: 'post',
+          },
+          user: {
+            url: '/auth/user',
+            method: 'get',
+            propertyName: 'user',
+          },
+        },
+      },
+      'laravel.passport': {
+        url: 'http://openrun-api.test/v1/',
+        client_id: 1,
+        client_secret: 'sdLbmc9vkVje0oMTijKA7wNLje4XNRRAheD10r0w',
+      },
+    },
+  },
+
+  axios: {
+    baseURL: 'http://openrun-api.test/v1/',
+  },
+
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    config: {
+      purge: [],
+      theme: {
+        extend: {
+          colors: {
+            'brand-blue': '#2f6cc1',
+            'brand-dark-blue': '#204a83',
+          },
+        },
+      },
+      variants: {
+        extend: {
+          space: ['hover'],
+        }
+      },
+      plugins: [],
+    }
+  },
+
+  googleFonts: {
+    families: {
+      'Source+Sans+Pro': true,
+    },
+  },
 }
