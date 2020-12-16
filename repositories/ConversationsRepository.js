@@ -1,4 +1,4 @@
-const endpoint = '/me/upcoming-events';
+const endpoint = '/me/conversations';
 
 export default ($axios) => ({
   index() {

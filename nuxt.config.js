@@ -31,12 +31,14 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@nuxtjs/fontawesome',
+    '@nuxtjs/laravel-echo',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/auth',
+    '@nuxtjs/laravel-echo',
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -66,7 +68,7 @@ export default {
       'laravel.passport': {
         url: 'http://openrun-api.test/v1/',
         client_id: 1,
-        client_secret: 'sdLbmc9vkVje0oMTijKA7wNLje4XNRRAheD10r0w',
+        client_secret: '8UiDQ7SSW9tKvQ9WVCWuZ9IpNeL6qX2cqnhcO6eO',
       },
     },
   },
@@ -83,6 +85,7 @@ export default {
         extend: {
           colors: {
             'brand-blue': '#2f6cc1',
+            'brand-light-blue': '#6395d9',
             'brand-dark-blue': '#204a83',
           },
         },
@@ -100,5 +103,14 @@ export default {
     families: {
       'Source+Sans+Pro': true,
     },
+  },
+
+  echo: {
+    broadcaster: 'pusher',
+    cluster: 'eu',
+    authModule: true,
+    connectOnLogin: true,
+    key: '4aea26852864863e36db',
+    forceTLS: true,
   },
 }

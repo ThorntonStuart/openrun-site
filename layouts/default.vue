@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200">
+  <div class="bg-gray-200 h-screen">
     <header class="navbar bg-brand-blue w-full items-center">
       <div class="mx-auto pl-6 h-16 flex justify-between items-center">
         <nuxt-link to="/">
@@ -13,8 +13,11 @@
         </div>
         <div
           @click="dropdown = !dropdown"
-          :class="{ 'bg-brand-dark-blue' : dropdown }"
-          class="flex h-full px-6 hover:bg-brand-dark-blue cursor-pointer"
+          :class="[
+            { 'bg-brand-dark-blue' : dropdown },
+            { 'h-full hover:bg-brand-dark-blue cursor-pointer': $auth.loggedIn }
+          ]"
+          class="flex px-6"
         >
           <template v-if="$auth.loggedIn">
             <div class="flex items-center">

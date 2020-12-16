@@ -28,6 +28,12 @@
   @apply py-2 px-3 border bg-gray-200 border-gray-200 rounded-md outline-none;
 }
 
+.input--no-padding,
+.input--no-padding:hover,
+.input--no-padding:focus {
+  @apply border bg-gray-200 border-gray-200 rounded-md outline-none;
+}
+
 .input--on-bg-brand-blue,
 .input--on-bg-brand-blue:hover,
 .input--on-bg-brand-blue:focus {
