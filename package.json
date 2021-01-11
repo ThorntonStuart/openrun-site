@@ -15,8 +15,11 @@
     "@nuxtjs/axios": "^5.12.2",
     "core-js": "^3.6.5",
     "date-fns": "^2.16.1",
+    "epic-spinners": "^1.1.0",
     "nuxt": "^2.14.6",
-    "pusher-js": "^7.0.2"
+    "nuxt-stripe-module": "^3.0.1",
+    "pusher-js": "^7.0.2",
+    "vue-the-mask": "^0.11.1"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.1",

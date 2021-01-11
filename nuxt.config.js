@@ -18,8 +18,11 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/helpers',
     '~/plugins/vue-formulate',
+    '~/plugins/vue-the-mask',
     '~/plugins/repository',
+    '~/plugins/notifier',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -39,10 +42,12 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     '@nuxtjs/laravel-echo',
+    'nuxt-stripe-module',
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    transpile: ['epic-spinners'],
   },
 
   auth: {
@@ -68,7 +73,7 @@ export default {
       'laravel.passport': {
         url: 'http://openrun-api.test/v1/',
         client_id: 1,
-        client_secret: '8UiDQ7SSW9tKvQ9WVCWuZ9IpNeL6qX2cqnhcO6eO',
+        client_secret: 'JZfzuk7a3X1sawFlY4WCt4U4AnnpXLJivJCOTkms',
       },
     },
   },
@@ -83,10 +88,22 @@ export default {
       purge: [],
       theme: {
         extend: {
+          height: {
+            'screen-custom': 'calc(100vh - 64px)',
+          },
           colors: {
             'brand-blue': '#2f6cc1',
             'brand-light-blue': '#6395d9',
+            'brand-lighter-blue': '#dee9f7',
             'brand-dark-blue': '#204a83',
+            'paypal': '#fcc438',
+            'paypal-dark': '#e4a403',
+            'background-success': '#a7f3d0',
+            'background-info': '#fde68a',
+            'background-danger': '#fecaca',
+            'border-success': '#059669',
+            'border-info': '#d97706',
+            'border-danger': '#dc2626',
           },
         },
       },
@@ -101,7 +118,7 @@ export default {
 
   googleFonts: {
     families: {
-      'Source+Sans+Pro': true,
+      'Source+Sans+Pro': [100, 300, 500, 600, 700],
     },
   },
 
@@ -112,5 +129,9 @@ export default {
     connectOnLogin: true,
     key: '4aea26852864863e36db',
     forceTLS: true,
+  },
+
+  stripe: {
+    publishableKey: 'pk_test_qCu3tklT7ZRHzn2pGt6X7whX',
   },
 }
