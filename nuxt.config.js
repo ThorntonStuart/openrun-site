@@ -73,7 +73,7 @@ export default {
       'laravel.passport': {
         url: 'http://openrun-api.test/v1/',
         client_id: 1,
-        client_secret: 'JZfzuk7a3X1sawFlY4WCt4U4AnnpXLJivJCOTkms',
+        client_secret: 'SOW0cXldjAwvRsQUqOi7TXCRPrhex6iXPs5OgW1w',
       },
     },
   },
